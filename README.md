@@ -9,3 +9,5 @@ Leon - l.debnath@student.maastrichtuniversity.nl
 Ingo - i.heijnens@student.maastrichtuniversity.nl
 
 Giang - giang-le@student.maastrichtuniversity.nl
+
+Chiara - c.paglioni@student.maastrichtuniversity.nl
