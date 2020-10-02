@@ -1,4 +1,4 @@
-# Proj1-1
+# GROUP30_2020
 
 Please add your email addresses
 
