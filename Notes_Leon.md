@@ -1,3 +1,4 @@
+# Notes For Proj 1-1
 
 ## Solving Graph Coloring Problem Using an Enhanced Binary Dragonfly Algorithm
 
@@ -11,13 +12,13 @@
 
 ## The Greedy Algorithm (or first fit algorithm)
 
-	1. Pick a vertex V
-	
-	2. Colour it with the next legal colour
-	
-	3. Move to next vertex
+1. Pick a vertex V
 
-	// Psedocode
+2. Colour it with the next legal colour
+
+3. Move to next vertex
+
+### Pseudocode
 
 	for(Vertex V: Set_Of_Vertecies)
 	{
@@ -44,18 +45,18 @@
 
 ## DSATUR
 
-	1. List all vertecties in order of frequency (High to low)
+1. List all vertecties in order of frequency (High to low)
 
-	2. For the first vertex, assign colour 0.
+2. For the first vertex, assign colour 0.
 
-	3. For all subsequent vertecies, pick the vertex with the most adjacent colours, iterate through the colours until a viable one is found
+3. For all subsequent vertecies, pick the vertex with the most adjacent colours, iterate through the colours until a viable one is found
 	
-	## Field variables required
+## Field variables required
 	
 	Private vertex[] vertecies			// An array of vertex objects 
 	
 	
-	## Psuedocode
+### Psuedocode
 
 	while(vertecies.length != 0)
 	{
@@ -69,7 +70,7 @@
 	}
 
 
-	## Methods required
+### Methods required
 
 	Boolean legalColouring(int colour)		// check that the colouring doesn't invalidate the rules	
 							// Return true or false
