@@ -51,7 +51,7 @@
 
 3. For all subsequent vertecies, pick the vertex with the most adjacent colours, iterate through the colours until a viable one is found
 	
-## Field variables required
+### Field variables required
 	
 	Private vertex[] vertecies			// An array of vertex objects 
 	
@@ -86,8 +86,54 @@
 
 ## Recursive Largest First Algorithm
 
+1. List all the vertex frequencies largest to smallest
+
+2. Starting at the largest node, colour it and recursively call the colouring function on each adjacent node, incrementing the colour number
+
+3. At the base case (no more uncoloured nodes) Return the chromatic number, comparing over the backpropogation.
+
+### Field variables required
+
+### Psuedocode
+
+	public int colour(vertex[] vertecies, int vertex, int colour)
+	{
+		vertex[] vtxs = Array.copyOf(vertecies);				// Create a copy of the graph
+		
+		if(pickNextVertex() == -1)						// If the vertex is the last to be coloured, return the chromatic number
+			return colour;
+		
+		while(!legal(colour)							// Pick the next legal colour
+		{
+			colour++;
+		}
+		
+		int numberOfSubGraphs = howManyAdjacentVertecies();			// Calculate all of the possible next vertecies (using DSATUR)
+		vtxs[][] subGraphs = new vertex[numberOfSubGraphs][vertecies.length];	// Create a matrix of each sub Graph
+	
+		int[] chromaticNumber = new int[numberOfSubGraphs];			// Create a list to hold the returned values from the sub graphs
+		for(int i; i < subGraphs.length; i++)
+		{
+			chromaticNumber[i] = colour(subGraphs[i], colour);		// Recursive call
+		}
+		
+		int lowest = 0;
+		for(int i: chomaticNumber)
+		{
+			if( i < lowest)
+				lowest = i;
+		}
+		return lowest;
+	}
+
+### Methods required
+
 **References:**
+New Methods to Color the Vertices of a Graph - D.Brelaz - April 1979 - file:///tmp/mozilla_lsd0/Brelaz79.pdf
+
 *A new efficient RLF-like Algorithm for the Vertex Coloring Problem - M.Adegbindin, A.Hertx, M, Bell ̈ıche - November 2, 2015  - file:///tmp/mozilla_lsd0/RLFPaper.pdf*
+
+*Discrete Optimization - M.Chiarandini - file:///tmp/mozilla_lsd0/dm841-lec13.pdf *
 
 //--------------------------------------------------
 
