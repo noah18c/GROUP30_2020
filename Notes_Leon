@@ -1,4 +1,4 @@
-
+/*
 #Solving Graph Coloring Problem Using an Enhanced Binary Dragonfly Algorithm
 
 >"The two most constructive algorithms employed to solve the GCP are the recursive largest first algorithm (RLF) proposed by Leighton (Leighton, 1979) and the largest saturation degree algorithm (DSATUR) developed by Brélaz (Brélaz, 1979). These methods are based on greedy approach which colors the nodes of the graph one at time using a predefined greedy function. Recently, these approaches have been used to generate initial solutions for advanced evolutionary algorithms.
@@ -92,6 +92,6 @@
 
 	Lower bound: 
 
-		
+*/
 
 
