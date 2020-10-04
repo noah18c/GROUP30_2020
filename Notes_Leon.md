@@ -18,9 +18,10 @@
 
 3. Move to next vertex
 
-### Feild Variables
+### Field Variables
 
 int currentColour;
+int[][] graph; - 3D array to record vertex and colour
 
 ### Pseudocode
 
@@ -41,7 +42,9 @@ int currentColour;
 	
 ### Methods required
 
-
+	boolean legalColouring() - check if the graph is breaking any rules
+	
+	boolean allColoured() - check if there are still vertecies to be coloured
 
  **References:**
  *Dr Rhyd Lewis - Cardiff University School of Mathematics - https://www.youtube.com/watch?v=L2csXWQMsNg ; Accessed 03-10-2020*
