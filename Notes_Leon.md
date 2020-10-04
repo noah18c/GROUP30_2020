@@ -89,7 +89,10 @@ int[][] graph; - 3D array to record vertex and colour
 
 	int nextMostSaturated(vertex[] vertecies)	// pick the next vertex in the array that is not coloured, but is highest in saturation
 							// Return an int index of the vertex
-	
+
+**References**
+*https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiDia_prpvsAhWP_aQKHSIxDdAQFjABegQIBBAC&url=https%3A%2F%2Fseer.ufrgs.br%2Frita%2Farticle%2Fdownload%2FRITA_Vol25_Nr4_57%2Fpdf&usg=AOvVaw3LmIL8VZa8vQb3OL1_tTCl*
+
 //--------------------------------------------------
 
 ## Recursive Largest First Algorithm
@@ -145,7 +148,7 @@ int[][] graph; - 3D array to record vertex and colour
 	void order(ColEdge[] array) - order each edge so that V is odd and U is even where possible
 
 **References:**
-New Methods to Color the Vertices of a Graph - D.Brelaz - April 1979 - file:///tmp/mozilla_lsd0/Brelaz79.pdf
+*New Methods to Color the Vertices of a Graph - D.Brelaz - April 1979 - file:///tmp/mozilla_lsd0/Brelaz79.pdf*
 
 *A new efficient RLF-like Algorithm for the Vertex Coloring Problem - M.Adegbindin, A.Hertx, M, Bell ̈ıche - November 2, 2015  - file:///tmp/mozilla_lsd0/RLFPaper.pdf*
 
@@ -153,7 +156,17 @@ New Methods to Color the Vertices of a Graph - D.Brelaz - April 1979 - file:///t
 
 //--------------------------------------------------
 
-## TABUCOL
+## 3-Colouring using SAT
+
+
+
+**References**
+
+*complete algorithm to solve the graph-coloring problem - H.Ayanegui et al -  file:///tmp/mozilla_lsd0/09_LANMR09_06.pdf*
+
+*3-Coloring is NP-Complete - file:///tmp/mozilla_lsd0/3CP.pdf*
+
+*ntroduction to Complexity Theory: 3-Colouring is NP-complete - L.Mouatadid - 2014 - file:///tmp/mozilla_lsd0/3sat-to-3col.pdf
 
 //--------------------------------------------------
 
