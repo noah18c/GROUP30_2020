@@ -18,6 +18,10 @@
 
 3. Move to next vertex
 
+### Feild Variables
+
+int currentColour;
+
 ### Pseudocode
 
 	for(Vertex V: Set_Of_Vertecies)
@@ -35,7 +39,8 @@
 		}
 	}
 	
-	
+### Methods required
+
 
 
  **References:**
@@ -86,11 +91,11 @@
 
 ## Recursive Largest First Algorithm
 
-1. List all the vertex frequencies largest to smallest
+1. List all the edges by frequency largest to smallest (Use of odd -> even sorting?)
 
-2. Starting at the largest node, colour it and recursively call the colouring function on each adjacent node, incrementing the colour number
+2. Starting at the largest set of edges, colour them, increment the colour and recursively run on the array with the largest set of edges removed.
 
-3. At the base case (no more uncoloured nodes) Return the chromatic number, comparing over the backpropogation.
+3. At the base case (no more uncoloured nodes) Return the chromatic number, comparing legality over the backpropogation.
 
 ### Field variables required
 
@@ -100,7 +105,7 @@
 	{
 		vertex[] vtxs = Array.copyOf(vertecies);				// Create a copy of the graph
 		
-		if(pickNextVertex() == -1)						// If the vertex is the last to be coloured, return the chromatic number
+		if(pickNextEdge() == -1)						// If the vertex is the last to be coloured, return the chromatic number
 			return colour;
 		
 		while(!legal(colour)							// Pick the next legal colour
@@ -127,6 +132,14 @@
 	}
 
 ### Methods required
+
+	void sort(ColEdge[] array) - sort the array of edges by frequency
+	
+	int pickNextEdge() - Return the index of the next edge by freqency
+	
+	ColEdge removeColoured(ColEdge[] array, int remove) - remove all instances of v == remove and return a copy of the array for recursive search
+	
+	void order(ColEdge[] array) - order each edge so that V is odd and U is even where possible
 
 **References:**
 New Methods to Color the Vertices of a Graph - D.Brelaz - April 1979 - file:///tmp/mozilla_lsd0/Brelaz79.pdf
