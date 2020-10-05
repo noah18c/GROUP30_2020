@@ -2,7 +2,7 @@
 		Vertices|Edges		DSatur		SAT		Brute Force
 Graph_01: 	76	303		11		
 Graph_02: 	61	1390		24
-Graph_03: 	18	46		4				3
+Graph_03: 	18	46		4		4		3
 Graph_04: 	11	16		3		2		3
 Graph_05: 	93	92		2    				2
 Graph_06: 	69	409		8
@@ -17,6 +17,6 @@ Graph_14: 	31	385		16
 Graph_15: 	41	205		7
 Graph_16: 	867	18711		54
 Graph_17: 	81	293		5
-Graph_18: 	52	52		2    
+Graph_18: 	52	52		2    		
 Graph_19: 	32	466		31
 Graph_20: 	82	811		10
