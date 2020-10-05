@@ -162,6 +162,8 @@ int[][] graph; - 3D array to record vertex and colour
 
 **References**
 
+* Polynomial Encoding of k-Color Graphs to SAT - https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiw_72RlJ3sAhVHsaQKHT6YBc8QFjACegQIAxAC&url=https%3A%2F%2Fshodhganga.inflibnet.ac.in%2Fbitstream%2F10603%2F119979%2F7%2Fchapter%25206.pdf&usg=AOvVaw2vj8QR0OqaSan3Z2xi3nsq*
+
 *complete algorithm to solve the graph-coloring problem - H.Ayanegui et al -  file:///tmp/mozilla_lsd0/09_LANMR09_06.pdf*
 
 *3-Coloring is NP-Complete - file:///tmp/mozilla_lsd0/3CP.pdf*
