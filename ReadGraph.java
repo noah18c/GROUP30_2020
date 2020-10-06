@@ -28,10 +28,18 @@ public class ReadGraph
 	public final static boolean DEBUG = false;
 	public final static String COMMENT = "//";
 	
-	
+//	!enable for the driver class to run multiple tests!	
+//	public ReadGraph(String file)
+//	{
+//		run(file);
+//	}
+		
 	//-------------------------------------------------------
 	
 	public static void main( String args[] )
+	
+	// !enable for the driver class to run multiple tests!	
+	// public static void run(String file)
 	{
 		if( args.length < 1 )
 		{
@@ -40,7 +48,7 @@ public class ReadGraph
 		}
 
 			
-		String inputfile = args[0];
+		String inputfile =  args[0]; //file; !enable for the driver class to run multiple tests	
 		
 		boolean seen[] = null;
 		
@@ -127,10 +135,10 @@ public class ReadGraph
 		
 		DSATUR dsatur = new DSATUR();
 		int chromNum = dsatur.run(e, m, n);
-		Branching SAT1 = new Branching(e, n, m, chromNum+2);
-		Branching SAT2 = new Branching(e, n, m, chromNum+1);
+		//Branching SAT1 = new Branching(e, n, m, chromNum+2);
+		//Branching SAT2 = new Branching(e, n, m, chromNum+1);
 		Branching SAT3 = new Branching(e, n, m, chromNum);
-		Branching SAT4 = new Branching(e, n, m, chromNum-1);
+		//Branching SAT4 = new Branching(e, n, m, chromNum-1);
 
 	}	
 }
