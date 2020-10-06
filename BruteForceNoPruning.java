@@ -60,20 +60,19 @@ class Vertex  {
          * 
          */
         public static boolean verify(Vertex[] vertices) {
-			Vertex[] verifyVertices = new Vertex[vertices.length];
-			System.arraycopy(vertices, 0, verifyVertices, 0, vertices.length);
-
-            boolean isVerified = true;
-            // If none of the vertices have a connected vertex with the same color, then it is valid.
-			for (int i = 0; i < verifyVertices.length && isVerified; i++) {
-				Vertex vertex = verifyVertices[i];
-				if (vertex.color == -1) return false;
-				for (Integer edge : vertex.connections) {
-					if (vertex.color == verifyVertices[edge].color) return false;
-				}
+		Vertex[] verifyVertices = new Vertex[vertices.length];
+		System.arraycopy(vertices, 0, verifyVertices, 0, vertices.length);
+		boolean isVerified = true;
+		// If none of the vertices have a connected vertex with the same color, then it is valid.
+		for (int i = 0; i < verifyVertices.length && isVerified; i++) {
+			Vertex vertex = verifyVertices[i];
+			if (vertex.color == -1) return false;
+			for (Integer edge : vertex.connections) {
+				if (vertex.color == verifyVertices[edge].color) return false;
 			}
-			return true;
 		}
+		return true;
+	}
 
     }
     
@@ -81,11 +80,11 @@ class Vertex  {
 public class BruteForceNoPruning {
     /**
      * Main method of the brute force algorithm
-	 * 
-	 * @param e Array of ColEdge Objects
-	 * @param n Number of vertices
+     * 
+     * @param e Array of ColEdge Objects
+     * @param n Number of vertices
      * @return Chromatic number
-	 */
+     */
     public static int run(ColEdge[] e, int n) {
         Vertex[] vertices = toVertexArray(e, n);
         long startTime = System.nanoTime();
