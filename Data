@@ -1,6 +1,6 @@
 
 		Vertices|Edges		DSatur	(T)			SAT	(T)			Brute Force	(T)
-Graph_01: 	76	303		11	9.826787 ms		11	259902.377307 ms			
+Graph_01: 	76	303		11	9.826787 ms					
 Graph_02: 	61	1390		24	16.925171 ms					
 Graph_03: 	18	46		4	0.150178 ms		4	141.367272 ms		4		122158.200 ms
 Graph_04: 	11	16		3	0.103567 ms		3	35.044241 ms		3		40.760500 ms
@@ -11,18 +11,16 @@ Graph_08: 	56	483		9	1.664507 ms
 Graph_09: 	41	184		10	0.719777 ms					
 Graph_10: 	209	1249		9	13.739106 ms						
 Graph_11: 	191	3888		31	57.20874 ms				
-Graph_12: 	195	2365		8	15.080223 ms		7	292.917509 ms			
-Graph_13: 	61	448		2    	0.787499 ms		2	8.620209 ms		2**		(Still running)	
+Graph_12: 	195	2365		8	15.080223 ms				
+Graph_13: 	61	448		2    	0.787499 ms						2**		(Still running)	
 Graph_14: 	31	385		16	1.01374 ms		
-Graph_15: 	41	205		7	0.39815 ms		6	3.847485 ms
+Graph_15: 	41	205		7	0.39815 ms		6	15455.07778 ms
 Graph_16: 	867	18711		54	1024.719048 ms		
 Graph_17: 	81	293		5/6*	0.754837 ms		5	5.709193 ms
-Graph_18: 	52	52		4    	0.238595 ms		3	1.029574 ms
+Graph_18: 	52	52		4    	0.238595 ms		4	1523.343029 ms
 Graph_19: 	32	466		31	1.786148 ms		
 Graph_20: 	82	811		10	3.06434 ms		
 
-
-
 *Runs provided differing results
 **With pruning; may be inaccurate.
-*** Too many colours to test, requires rewrite
+
