@@ -25,10 +25,15 @@ public class Branching
 	public Branching(ColEdge[] E, int v, int e, int k) 
 	{
 		String[] colours = {"a","b","c","d","e","f","g","h","i","j","k","l","m","o","p","q","r","s","t","u","v","w","x","y","z"}; 
-		
-		// Create strings for L for each vertex 'v', edge 'e' and colour 'v'
-		int totalClauses = v + (e*k);
-		//	string[] = {V + K1, V + K2 ... V + Kn}  for  String[V][K]
+		System.out.println("Running Satisfiability for " + k + " colours");
+		// Create strings for L for At Least One Colour(ALOC), At Most One Colour (AMOC) and Different Colour (DCOL)
+		// Calculate the total number of String[] arrays required
+		int totalClauses = 0;
+		if(k <= 2)
+			totalClauses = (2 * v + (e * k));
+		else
+			totalClauses = (v + (v * k * ((k-1)/2) + (e * k)));
+		// ALOC string[] = {V + K1, V + K2 ... V + Kn}  for  String[V][K]	|v|
 		String[][] L = new String[totalClauses][];
 		Boolean[][] L_values = new Boolean[totalClauses][];
 		for(int i = 0; i < v; i++)
@@ -43,8 +48,35 @@ public class Branching
 			}
 		}
 		
-		// for each edge V - U and colour K
-		//  string[] = {V + K + n, U + K + n}		for String[E][K]
+		//AMOC String[] = {V + K1, V + K2} {V + K1, V + K3}  for String[V][K]	   |v|*k*(k-1)/2
+		int Lpntr = v;
+		for(int i = 1; i <= v; i++)
+		{
+			for(int j = 0; j < k-1; j++)
+			{
+				for(int l = 0; l < k; l++)
+				{
+					// This ensures that you don't get two of the same colour or repetition 
+					if(l != j && l > j )						
+					{
+						// Create two more elements
+						L[Lpntr] = new String[2];
+						L_values[Lpntr] = new Boolean[2];
+						// Add clause (Vi + Kj + n ^ Vi + Kl + n) 
+						L[Lpntr][0] = i + colours[j] + "n";
+						L[Lpntr][1] = i + colours[l] + "n";
+						// Add two new corresponding values to the L_Values 
+						L_values[Lpntr][0] = null;
+						L_values[Lpntr][1] = null;
+						// Increment to the next pointer location
+						Lpntr++;
+					}
+				}
+			}
+		}
+		
+		// For each edge V - U and colour K
+		// DCOL string[] = {V + K + n, U + K + n}	for String[E][K]	e*k
 		int Lpntr = v;
 		for(int j = 0; j < k; j++)
 		{
@@ -60,9 +92,6 @@ public class Branching
 			}
 		}
 		
-		System.out.println("Running Satisfiability for " + k + " colours");
-		System.out.println(Arrays.deepToString(L));
-
 		String[] A = new String[v*k];
 		Boolean[] A_values = new Boolean[v*k];
 		int pntr = 0;
@@ -77,13 +106,21 @@ public class Branching
 		}
 
 //		The below section provides the arrays for a 6Vertex/7Edge problem, making it easier to visualise what the code above creates		
+//		System.out.println("Running Satisfiability for 3 colours");
 //		String[][] L = { // ALOC |V|
 //						{"1a", "1b", "1c"}, 	
 //						{"2a", "2b", "1c"}, 
 //						{"3a", "3b", "3c"}, 
 //						{"4a", "4b", "4c"}, 
 //						{"5a", "5b", "5c"}, 
-//						{"6a", "6b", "6c"}, 
+//						{"6a", "6b", "6c"},
+//						// AMOC |v|*k*(k-1)/2 
+//		                		{"1an", "1bn"}, {"1an", "1cn"}, {"1bn", "1cn"},
+//						{"2an", "2bn"},	{"2an", "2cn"}, {"2bn", "2cn"},
+//						{"3an", "3bn"},	{"3an", "3cn"}, {"3bn", "3cn"},
+//						{"4an", "4bn"},	{"4an", "4cn"}, {"4bn", "4cn"},
+//						{"5an", "5bn"},	{"5an", "5cn"}, {"5bn", "5cn"},
+//						{"6an", "6bn"},	{"6an", "6cn"}, {"6bn", "6cn"},
 //						// DCOL |E|*K where K = available colours
 //						{"1an", "2an"},	{"1bn", "2bn"},	{"1cn", "2cn"},
 //						{"2an", "3an"},	{"2bn", "3bn"},	{"2cn", "3cn"},
@@ -111,7 +148,9 @@ public class Branching
 //					  "1b", "2b", "3b", "4b", "5b", "6b",
 //					  "1c", "2c", "3c", "4c", "5c", "6c",};
 //		Boolean[] A_values = {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null};
-
+		
+		
+		System.out.println(Arrays.deepToString(L));
 		
 		ReturnObject output = new ReturnObject(true, A_values);
 		// Measure the time needed to find the solution
