@@ -1,27 +1,28 @@
 
 		Vertices|Edges		DSatur	(T)			SAT	(T)			Brute Force	(T)
-Graph_01: 	76	303		11	9.826787 ms		11	59.166897 ms			
-Graph_02: 	61	1390		24	16.925171 ms						
-Graph_03: 	18	46		4	0.150178 ms		4	1050305.367 ms		4		122158.200 ms
+Graph_01: 	76	303		11	9.826787 ms		11	34.027033 ms			
+Graph_02: 	61	1390		24	16.925171 ms		23	1399.943432 ms			
+Graph_03: 	18	46		4	0.150178 ms		4	0.601385 ms		4		122158.200 ms
 Graph_04: 	11	16		3	0.103567 ms		2	0.317872 ms		3		40.760500 ms
 Graph_05: 	93	92		2    	0.461993 ms		2	3.021084 ms		2**		(Still running)
-Graph_06: 	69	409		8	1.612195 ms						
-Graph_07: 	43	127		5	0.369899 ms		5	9.685274 ms			
-Graph_08: 	56	483		9	1.664507 ms		9	49.803168 ms			
-Graph_09: 	41	184		10	0.719777 ms						
-Graph_10: 	209	1249		9	13.739106 ms		9	241.467629 ms				
-Graph_11: 	191	3888		31	57.20874 ms						
-Graph_12: 	195	2365		8	15.080223 ms						
-Graph_13: 	61	448		2    	0.787499 ms		2	9.638667 ms		2**		(Still running)	
-Graph_14: 	31	385		16	1.01374 ms		
-Graph_15: 	41	205		7	0.39815 ms		7	16.188537 ms
-Graph_16: 	867	18711		54	1024.719048 ms		
-Graph_17: 	81	293		5/6*	0.754837 ms		
-Graph_18: 	52	52		4    	0.238595 ms			
-Graph_19: 	32	466		31	1.786148 ms		
-Graph_20: 	82	811		10	3.06434 ms		
+Graph_06: 	69	409		8	1.612195 ms		7	14.074531 ms			
+Graph_07: 	43	127		5	0.369899 ms		4	1.195384 ms			
+Graph_08: 	56	483		9	1.664507 ms		8	25.471214 ms			
+Graph_09: 	41	184		10	0.719777 ms		9	7.651813 ms			
+Graph_10: 	209	1249		9	13.739106 ms		8	166.957799 ms				
+Graph_11: 	191	3888		31	57.20874 ms		***			
+Graph_12: 	195	2365		8	15.080223 ms		7	292.917509 ms			
+Graph_13: 	61	448		2    	0.787499 ms		2	8.620209 ms		2**		(Still running)	
+Graph_14: 	31	385		16	1.01374 ms		15 	54.45127 ms
+Graph_15: 	41	205		7	0.39815 ms		6	3.847485 ms
+Graph_16: 	867	18711		54	1024.719048 ms		***
+Graph_17: 	81	293		5/6*	0.754837 ms		5	5.709193 ms
+Graph_18: 	52	52		4    	0.238595 ms		3	1.029574 ms
+Graph_19: 	32	466		31	1.786148 ms		***
+Graph_20: 	82	811		10	3.06434 ms		9	70.259346 ms
 
 
 
 *Runs provided differing results
 **With pruning; may be inaccurate.
+*** Too many colours to test, requires rewrite
