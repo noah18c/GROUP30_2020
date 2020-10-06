@@ -1,6 +1,8 @@
 package proj1;
 /**
  * Implementation of the 3-SATISFIABILITY algorithm from S.Kelk implemented by E.Hortal to solve satisfiability of k-Colouring of a graph
+ * Heavily influenced by the paper "Polynomial Encoding of k-Color Graphs to SAT" of unknown author and
+ * "Polynomial 3-SAT Encoding for K-Colorability of Graph" by P.Sharma and N.Chaudhari of the Indian Institute of Technology
  * 
  * @author L.Debnath
  * @version 1.0
