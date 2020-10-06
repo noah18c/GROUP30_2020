@@ -1,11 +1,8 @@
 package proj1;
 /**
- * Implementation of the 3-SATISFIABILITY algorithm presented by Steven Kelk in Discrete Mathematics course.
- * 		The problem can be described as a "logical-AND of lots of clauses, where a clause is the logical-OR of three (possibly negated) primitive propositions."
- * 		For example: (x OR y OR not z) AND (not x OR w OR z) AND (…) AND ….
- * 		This piece of code will be useful when developing your solution for Project 1.1
-
- * @author Enrique Hortal
+ * Implementation of the 3-SATISFIABILITY algorithm from S.Kelk implemented by E.Hortal to solve satisfiability of k-Colouring of a graph
+ * 
+ * @author L.Debnath
  * @version 1.0
  */
 
@@ -61,9 +58,9 @@ public class Branching
 			}
 		}
 		
+		System.out.println("Running Satisfiability for " + k + " colours");
 		System.out.println(Arrays.deepToString(L));
-		
-	
+
 		String[] A = new String[v*k];
 		Boolean[] A_values = new Boolean[v*k];
 		int pntr = 0;
@@ -77,7 +74,7 @@ public class Branching
 			}
 		}
 
-		
+//		The below section provides the arrays for a 6Vertex/7Edge problem, making it easier to visualise what the code above creates		
 //		String[][] L = { // ALOC |V|
 //						{"1a", "1b", "1c"}, 	
 //						{"2a", "2b", "1c"}, 
@@ -115,7 +112,7 @@ public class Branching
 
 		
 		ReturnObject output = new ReturnObject(true, A_values);
-		// We will also measure the time needed to find the solution
+		// Measure the time needed to find the solution
 		long start = System.nanoTime();
 		
 		output = isSatisfiable(L, L_values, A, A_values, null);
