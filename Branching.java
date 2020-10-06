@@ -22,7 +22,7 @@ public class Branching
 	 * @param e - Number of Edges
 	 * @param k - Number of Colours
 	 */
-	public Branching(ColEdge[] E, int v, int e, int k) 
+	public Branching(ColEdge[] E, int e, int v, int k) 
 	{
 		String[] colours = {"a","b","c","d","e","f","g","h","i","j","k","l","m","o","p","q","r","s","t","u","v","w","x","y","z"}; 
 		System.out.println("Running Satisfiability for " + k + " colours");
