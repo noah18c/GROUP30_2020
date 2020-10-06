@@ -164,11 +164,7 @@ int[][] graph; - 3D array to record vertex and colour
 
 * Polynomial Encoding of k-Color Graphs to SAT - https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiw_72RlJ3sAhVHsaQKHT6YBc8QFjACegQIAxAC&url=https%3A%2F%2Fshodhganga.inflibnet.ac.in%2Fbitstream%2F10603%2F119979%2F7%2Fchapter%25206.pdf&usg=AOvVaw2vj8QR0OqaSan3Z2xi3nsq*
 
-*complete algorithm to solve the graph-coloring problem - H.Ayanegui et al -  file:///tmp/mozilla_lsd0/09_LANMR09_06.pdf*
-
-*3-Coloring is NP-Complete - file:///tmp/mozilla_lsd0/3CP.pdf*
-
-*ntroduction to Complexity Theory: 3-Colouring is NP-complete - L.Mouatadid - 2014 - file:///tmp/mozilla_lsd0/3sat-to-3col.pdf
+* Polynomial 3-SAT Encoding for K-Colorability of Graph -  P.Sharma and N.Chaudhari of the Indian Institute of Technology - https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwi65J7Du5_sAhUI-qQKHVnyCfwQFjABegQIBhAC&url=http%3A%2F%2Fcse.vnit.ac.in%2Fpeople%2Fnarendraschaudhari%2Fwp-content%2Fuploads%2Fsites%2F15%2F2014%2F10%2F046-3-SAT-encoding-of-K-Colorability-encc004.pdf&usg=AOvVaw0IyqdwupGOoRUjY7mbZrf8
 
 //--------------------------------------------------
 
