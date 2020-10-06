@@ -1,10 +1,10 @@
 
-		Vertices|Edges		DSatur	(T)			SAT	(T)			Brute Force
+		Vertices|Edges		DSatur	(T)			SAT	(T)			Brute Force	(T)
 Graph_01: 	76	303		11	9.826787 ms		11	59.166897 ms			
 Graph_02: 	61	1390		24	16.925171 ms						
-Graph_03: 	18	46		4	0.150178 ms		4	1050305.367 ms		3
-Graph_04: 	11	16		3	0.103567 ms		2	0.317872 ms		3
-Graph_05: 	93	92		2    	0.461993 ms		2	3.021084 ms		2
+Graph_03: 	18	46		4	0.150178 ms		4	1050305.367 ms		4		122158.200 ms
+Graph_04: 	11	16		3	0.103567 ms		2	0.317872 ms		3		40.760500 ms
+Graph_05: 	93	92		2    	0.461993 ms		2	3.021084 ms		2**		(Still running)
 Graph_06: 	69	409		8	1.612195 ms						
 Graph_07: 	43	127		5	0.369899 ms		5	9.685274 ms			
 Graph_08: 	56	483		9	1.664507 ms		9	49.803168 ms			
@@ -12,7 +12,7 @@ Graph_09: 	41	184		10	0.719777 ms
 Graph_10: 	209	1249		9	13.739106 ms		9	241.467629 ms				
 Graph_11: 	191	3888		31	57.20874 ms						
 Graph_12: 	195	2365		8	15.080223 ms						
-Graph_13: 	61	448		2    	0.787499 ms		2	9.638667 ms		2	
+Graph_13: 	61	448		2    	0.787499 ms		2	9.638667 ms		2**		(Still running)	
 Graph_14: 	31	385		16	1.01374 ms		
 Graph_15: 	41	205		7	0.39815 ms		7	16.188537 ms
 Graph_16: 	867	18711		54	1024.719048 ms		
