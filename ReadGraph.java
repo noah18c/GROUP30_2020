@@ -135,10 +135,8 @@ public class ReadGraph
 		
 		DSATUR dsatur = new DSATUR();
 		int chromNum = dsatur.run(e, m, n);
-		//Branching SAT1 = new Branching(e, n, m, chromNum+2);
-		//Branching SAT2 = new Branching(e, n, m, chromNum+1);
-		Branching SAT3 = new Branching(e, n, m, chromNum);
-		//Branching SAT4 = new Branching(e, n, m, chromNum-1);
+		Branching SAT1 = new Branching(e, m, n, chromNum);
+		Branching SAT2 = new Branching(e, m, n, chromNum-1);
 
 	}	
 }
