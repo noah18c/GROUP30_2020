@@ -1,22 +1,26 @@
 
-		Vertices|Edges		DSatur		SAT		Brute Force
-Graph_01: 	76	303		11		
-Graph_02: 	61	1390		24
-Graph_03: 	18	46		4		4		3
-Graph_04: 	11	16		3		2		3
-Graph_05: 	93	92		2    				2
-Graph_06: 	69	409		8
-Graph_07: 	43	127		5
-Graph_08: 	56	483		9
-Graph_09: 	41	184		10
-Graph_10: 	209	1249		9
-Graph_11: 	191	3888		31
-Graph_12: 	195	2365		8
-Graph_13: 	61	448		2    				2
-Graph_14: 	31	385		16
-Graph_15: 	41	205		7
-Graph_16: 	867	18711		54
-Graph_17: 	81	293		5
-Graph_18: 	52	52		2    		
-Graph_19: 	32	466		31
-Graph_20: 	82	811		10
+		Vertices|Edges		DSatur	(T)			SAT	(T)		Brute Force
+Graph_01: 	76	303		11	9.826787 ms					
+Graph_02: 	61	1390		24	16.925171 ms					
+Graph_03: 	18	46		4	0.150178 ms		4			3
+Graph_04: 	11	16		3	0.103567 ms		2			3
+Graph_05: 	93	92		2    	0.461993 ms					2
+Graph_06: 	69	409		8	1.612195 ms				
+Graph_07: 	43	127		5	0.369899 ms		
+Graph_08: 	56	483		9	1.664507 ms		
+Graph_09: 	41	184		10	0.719777 ms		
+Graph_10: 	209	1249		9	13.739106 ms		
+Graph_11: 	191	3888		31	57.20874 ms		
+Graph_12: 	195	2365		8	15.080223 ms		
+Graph_13: 	61	448		2    	0.787499 ms					2
+Graph_14: 	31	385		16	1.01374 ms		
+Graph_15: 	41	205		7	0.39815 ms		
+Graph_16: 	867	18711		54	1024.719048 ms		
+Graph_17: 	81	293		5/6*	0.754837 ms		
+Graph_18: 	52	52		4    	0.238595 ms			
+Graph_19: 	32	466		31	1.786148 ms		
+Graph_20: 	82	811		10	3.06434 ms		
+
+
+
+*Runs provided differing results
