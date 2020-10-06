@@ -2,26 +2,6 @@ package proj1;
 
 import java.util.Arrays;
 
-/*
-!!! check that this code is updated in the ReadGraph class BEFORE running !!!
-
-	class ColEdge
-{
-	int u;
-	int v;
-	int colU = -1;
-	int colV = -1;
-	
-	public boolean legal()
-	{
-		boolean legal = true;
-		if(colV != -1 && colV == colU)
-			legal = false;	
-		return legal;
-	}
-}
-*/
-
 //-------------------------------------------------------
 
 public class DSATUR 
@@ -33,6 +13,9 @@ public class DSATUR
 
 	public int run(ColEdge[] e, int m, int n)
 		{
+			System.out.println("Running DSATUR");
+			// Start the clock!
+			long start = System.nanoTime();
 			// Colour the most frequent vertex
 			colour(e, mostFreq(e, n), 0);
 			int chromeNumb = 0;
@@ -66,6 +49,7 @@ public class DSATUR
 			if(DEBUG) {printGraph(e);}
 			
 			System.out.println("Chomatic Number = " + (chromeNumb + 1)); // Add one due to counting colour 0
+			System.out.println("The time needed to perform this analysis was: " + (System.nanoTime()-start)/1000000.0 + " ms.\n");
 			return chromeNumb + 1;
 		}
 		
