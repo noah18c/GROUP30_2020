@@ -6,8 +6,12 @@
   
   	/** method to doStuff
   	 *@param foo - int - the number of foos
-  	 *@retrun bar - int - the bar level
+  	 *@return bar - int - the bar level
 	 */
+	 private int doStuff(int foo)
+	 {
+	 	return bar;
+	 }
      
   **Ensure that complex code pieces such as nested for loops are explained**
   
