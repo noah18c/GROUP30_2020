@@ -10,7 +10,16 @@ public class DSATUR
 	private final boolean DEBUG = false;
 
 	//-------------------------------------------------------
-
+	/**
+	 * The loop method of the DSatur Algorithm. 
+	 * The algorithm is an optimisation of the Greedy Algorithm, it will colour the most frequent vertex first.
+	 * Subsequently the next vertex is chosen by the most saturated (i.e. the vertex with most adjacent coloured vertices).
+	 * If none exists the algorithm will revert back to the most frequent.
+	 * @param e	- ColEdge - Array of edges.
+	 * @param m	- Int - Number of vertices.
+	 * @param n - Int - Number of edges.
+	 * @return 	- Int - The chromatic number
+	 */
 	public int run(ColEdge[] e, int m, int n)
 		{
 			System.out.println("Running DSATUR");
@@ -75,7 +84,13 @@ public class DSATUR
 		}
 		
 		//-------------------------------------------------------
-			
+		/**
+		 * A method that counts the stauration (number of adjacent vertices that have been coloured) 
+		 * and returns the highest saturated.
+		 * @param e  		- the edges for the graph
+		 * @param vertices 	- the number of vertices
+		 * @return int[] 	- the number of edges to each vertex
+		 */	
 		private int mostSaturated(ColEdge[] e, int vertices)
 		{
 			int[] sat = new int[vertices+1];
@@ -137,7 +152,11 @@ public class DSATUR
 		}
 		
 		//-------------------------------------------------------
-		
+		/**
+		 * Checks each edge for legality using a method within the ColEdge object
+		 * @param e - ColEdge - Array of edges in the graph
+		 * @return  - Boolean - {@code true} if the entire graph is legal 
+		 */
 		private boolean legal(ColEdge[] e)
 		{
 			boolean legal = true;
@@ -151,7 +170,12 @@ public class DSATUR
 		}
 		
 		//-------------------------------------------------------
-		
+		/**
+		 * Checks each edge values for colU and colV are not '-1'.  If the entire graph is coloured
+		 * returns {@code true}
+		 * @param e - ColEdge - Array of edges in the graph
+		 * @return  - Boolean - If the entire graph has been coloured
+		 */
 		private boolean complete(ColEdge[] e)
 		{
 			boolean complete = true;
@@ -167,7 +191,10 @@ public class DSATUR
 		}
 		
 		//-------------------------------------------------------
-		
+		/**
+		 * Prints each edge (v then u) to the terminal.
+		 * @param e - ColEdge - Array of edges in the graph
+		 */
 		private void printGraph(ColEdge[] e)
 		{
 			for(ColEdge edge: e)
