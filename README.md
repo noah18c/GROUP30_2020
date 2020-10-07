@@ -7,7 +7,7 @@
   	/** method to doStuff
   	 *@param foo - int - the number of foos
   	 *@retrun bar - int - the bar level
-     	 */
+	 */
      
   **Ensure that complex code pieces such as nested for loops are explained**
   
