@@ -18,6 +18,7 @@
   	}
   
   **Add extra line comments for further explanation, either above or to the side (lined up), don't be afraid of using spaces**
+   
     Between the two examples below, what is more readable?        
             
         
