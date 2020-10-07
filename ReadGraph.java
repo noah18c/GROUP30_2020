@@ -1,13 +1,22 @@
 import java.io.*;
 import java.util.*;
 
-		class ColEdge
-			{
-			int u;
-			int v;
-			}
+	class ColEdge {
+		int u;
+		int v;
 		
-public class ReadGraph
+		//colors assigned to V and U, starts with -1 being blank
+		int colU = -1;
+		int colV = -1;
+		//legality check
+		public boolean legal() {
+			boolean legal = true;
+			if(colV != -1 && colV == colU){legal = false;}
+			return legal;
+		}
+	}
+		
+	public class ReadGraph
 		{
 		
 		public final static boolean DEBUG = true;
@@ -120,14 +129,68 @@ public class ReadGraph
 			//! e[m-1] will be the last edge
 			//! 
 			//! there will be n vertices in the graph, numbered 1 to n
+			
+			// m = edges amount
+			// n = vertices amount
+			// 
 
 			//! INSERT YOUR CODE HERE!
-			
-			
-			
-			
-				
-			
+			int[][] vMat = vertexMatrix(e, m, n); //this makes a matrix to contain data about the vertices
+			matrixPrinter(vMat);//prints interpretation of vMat
+			e = colorFiller(0, vMat[0][0], e, vMat); //assign color 0 to node 1 (located in vMat[0][0], but you can also just use the number 1) using array of ColEdge objects, updating vMat
+			e = colorFiller(0, 2, e, vMat);//assign color 0 to node 2 (you can also use vMat[1][0]) using array of ColEdge objects, updating vMat
+			matrixPrinter(vMat);//prints updated interpretation of vMat
+			System.out.println(legalGraph(e)); //prints whether the graph is legal
 		}
+		/*this returns a 2 dimensional array with in the first column the vertex number, 
+		in the second column the weight of that vertex and in the third the color of that vertex
+		Note: node 1 == vertexMatrix[0][0], node 2 == vertexMatrix[1][0], etc...
+		*/
+		public static int[][] vertexMatrix(ColEdge[] edge, int edgesAmount, int verticesAmount){
+			int[][] vertices = new int[verticesAmount][3];
+			ColEdge node = new ColEdge();
+			for(int i = 0; i<verticesAmount; i++){
+				vertices[i][0] = i + 1;
+			}
+			for(int vertexNumber = 1; vertexNumber <= verticesAmount; vertexNumber++){
+				for(int i = 0; i<edgesAmount; i++){
+					if(edge[i].u == vertexNumber || edge[i].v == vertexNumber){
+						vertices[vertexNumber-1][1] += 1;
+					}
+				}
+			}
+			for(int i = 0; i < verticesAmount; i++){
+				vertices[i][2] = -1; //all colors are set to -1, meaning blank. If >=0, then the vertex has a color.
+			}
+			return vertices;
+		}
+		public static void matrixPrinter(int[][] vertex){
+			System.out.println();
+			for(int i = 0; i < vertex.length; i++){
+				System.out.println("The nodeweight of vertex "+(i+1)+" is: "+vertex[i][1]+". And the color is: "+vertex[i][2]);
+			}
+		}
+		public static ColEdge[] colorFiller(int color, int nodeNumber, ColEdge[] edge, int[][] vertexMatrix){
+			for(int i = 0; i<edge.length; i++){
+				if(edge[i].u == nodeNumber){
+					edge[i].colU = color;
+				}
+				if(edge[i].v == nodeNumber){
+					edge[i].colV = color;
+				}	
+			}
+			vertexMatrix[nodeNumber-1][2] = color;
+			return edge;
+		}
+		
+		public static boolean legalGraph(ColEdge[] edge){
+			int i;
+			System.out.println(edge.length);
+			for(i = 0; (edge[i].legal() == true) && (i < edge.length-1); i++){}
+			if(edge[i].legal() == false){return false;}
+			return true;
+		}
+		
 
+				
 }
