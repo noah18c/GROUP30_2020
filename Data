@@ -29,7 +29,7 @@ Graph_20: 	82	811		10	3.06434 ms
 In order of complexity:		
 
 		Vertices|Edges	Complexity	DSatur		SAT		Brute Force
-				Index (1dp)
+				Index (rndd)
 Graph_04: 	11	16	1		0.103567 ms	35.044241 ms	40.760500 ms
 Graph_03: 	18	46	3		0.150178 ms	141.367272 ms	122158.200 ms		
 Graph_18: 	52	52	1		0.238595 ms	1523.343029 ms
