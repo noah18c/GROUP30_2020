@@ -3,17 +3,19 @@
 ## Commenting & readability:
 
   **Ensure every method has a comment using JavaDoc commenting** 
-    /** method to doStuff
-     *@param foo - int - the number of foos
-     *@retrun bar - int - the bar level
-     */
+  
+  	/** method to doStuff
+  	 *@param foo - int - the number of foos
+  	 *@retrun bar - int - the bar level
+     	 */
      
   **Ensure that complex code pieces such as nested for loops are explained**
-  //This loops through all numbers and calls {@code: doStuff()} on each
-  for(int i: numbers)
-  {
-    doStuff(i);
-  }
+  
+  	//This loops through all numbers and calls {@code: doStuff()} on each
+  	for(int i: numbers)
+  	{
+  	  doStuff(i);
+  	}
   
   **Add extra line comments for further explanation, either above or to the side (lined up)**
     Between the two examples below, what is more readable?        
