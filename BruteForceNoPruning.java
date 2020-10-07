@@ -56,7 +56,8 @@ class Vertex  {
          * Verify whether a coloring is valid
          * 
          * @param vertices Array of colored Vertex objects
-         * @return If the 
+         * @return {@code true} if the graph is valid
+	 * {@code false} if the graph is invalid
          * 
          */
         public static boolean verify(Vertex[] vertices) {
@@ -116,7 +117,7 @@ public class BruteForceNoPruning {
      * 
      * @param maxColors
      * @param vertices
-     * @return  {@code true} if it is possible to color the graph using {@code maxColors} colors
+     * @return {@code true} if it is possible to color the graph using {@code maxColors} colors
      * {@code false} if it is not possible to color the graph using {@code maxColors} colors
      */
     private static boolean attemptBruteForce(int maxColors, Vertex[] vertices) {
