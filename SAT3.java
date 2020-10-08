@@ -185,7 +185,7 @@ public class SAT3
 					
 		double time = (System.nanoTime()-start)/1000000.0;
                 System.out.println("\nThe time needed to perform this analysis was: " + time  + " ms.\n");
-                Logger.logResults("3-SAT", fileName , k, time);
+                Logger.logResults("3-SAT", inputfile , k, time);
 
 	}
 	
