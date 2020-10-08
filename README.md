@@ -8,7 +8,7 @@ To run a specific algorithm use the following arguments:
  	BackTracking: 	-bt
  	DSatur: 	-d
  	Brute Force: 	-bf
- 	3-SAT: 	-s
+ 	3-SAT: 		-s
 
 Add an integer of how many times to run the specified algorithm.
 
