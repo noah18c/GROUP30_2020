@@ -1,5 +1,17 @@
 # GROUP30_2020
 
+To run the algorithm on a single graph, specify the file name as a .txt file only.
+
+To run a specific algorithm use the following arguments:
+
+ Greedy: 	-g
+ BackTracking: 	-bt
+ DSatur: 	-d
+ Brute Force: 	-bf
+ 3-SAT: 	-s
+
+Add an integer of how many times to run the specified algorithm.
+
 ## Commenting & readability:
 
   **Ensure every method has a comment using JavaDoc commenting** 
