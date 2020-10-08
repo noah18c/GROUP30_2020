@@ -52,9 +52,11 @@ public static void graphColour(int v, int[] colour, int[][] graph) {
    return; 
 }
 
+	
 //This method checks if that colour is available to place
 //int v is the vertex to be coloured 
 //int colour is a possible colour that can be associated to vertex k 
+//
 public static boolean isAvailable (int v, int[] colour, int cr, int[][] graph) {
 
     for (int i = 0; i < graph.length; i++) {
