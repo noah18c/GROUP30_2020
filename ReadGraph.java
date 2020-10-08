@@ -139,7 +139,7 @@ public class ReadGraph
 				ColEdge[] eCopy = Arrays.copyOf(e, e.length);
 				for(int i = 0; i < times; i++)
 				{
-					SAT3 sat3 = new SAT3(e, m, n, xg);
+					SAT3 sat3 = new SAT3(e, m, n, xg, inputfile);
 				}
 			}
 		}
@@ -153,7 +153,7 @@ public class ReadGraph
 				{
 					ColEdge[] eCopy = copyEdges(e);
 					DSATUR dsatur = new DSATUR();
-					dsatur.run(eCopy, m, n);
+					dsatur.run(eCopy, m, n ,inputfile);
 				}
 			}
 			if(args[1].equalsIgnoreCase("-g"))			// Greedy
@@ -180,7 +180,7 @@ public class ReadGraph
 		}
 		else
 		{
-			System.out.println("Please enter a vaild set of arguments. For more information"
+			System.out.println("Please enter a valid set of arguments. For more information"
 					+ " run ReadGraph -help");
 			System.exit(0);
 		}
