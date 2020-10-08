@@ -16,7 +16,7 @@ public class Logger {
             fileWriter.write("[" + LocalDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS) + "]\t" + s + "\n");
             fileWriter.close();
         } catch (Exception e) {
-            System.err.println("Failed to write logs.");
+            System.out.println("Failed to write logs.");
         }
     }   
 
@@ -31,7 +31,7 @@ public class Logger {
             fileWriter.write("[" + LocalDateTime.now().toLocalTime().truncatedTo(ChronoUnit.SECONDS) + "]\t" + algorithm + "\t" + inputfile + "\t" + chromaticNumber + "\t" + time + "\n");
             fileWriter.close();
         } catch (Exception e) {
-            System.err.println("Failed to write logs.");
+            System.out.println("Failed to write logs.");
         }
     }   
 
@@ -43,7 +43,7 @@ public class Logger {
             fileWriter.write("");
             fileWriter.close();
         } catch (Exception e) {
-            System.err.println("Failed to write logs.");
+            System.out.println("Failed to write logs.");
         }
     }   
 
