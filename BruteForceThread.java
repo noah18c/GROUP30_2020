@@ -1,5 +1,3 @@
-package proj1;
-
 public class BruteForceThread extends Thread
 {
 	int maxColors, id, startfrom;

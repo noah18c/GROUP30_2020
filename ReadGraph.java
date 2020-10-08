@@ -177,11 +177,11 @@ public class ReadGraph
 			}
 			if(args[1].equalsIgnoreCase("-bf"))
 			{
+				BruteForceNoPruningThreaded b = new BruteForceNoPruningThreaded();
 				for(int i = 0; i < times; i++)
 				{
-					ColEdge[] eCopy = Arrays.copyOf(e, e.length);
-					DSATUR dsatur = new DSATUR();
-					dsatur.run(eCopy, m, n);
+					ColEdge[] eCopy = copyEdges(e);
+					b.run(eCopy, n);
 				}
 			}
 		}
