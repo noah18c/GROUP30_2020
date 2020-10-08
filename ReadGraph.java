@@ -26,18 +26,9 @@ public class ReadGraph
 	public final static boolean DEBUG = false;
 	public final static String COMMENT = "//";
 	
-//	!enable for the driver class to run multiple tests!	
-//	public ReadGraph(String file)
-//	{
-//		run(file);
-//	}
-		
 	//-------------------------------------------------------
 	
 	public static void main( String args[] )
-	
-	// !enable for the driver class to run multiple tests!	
-	// public static void run(String file)
 	{
 		if( args.length < 1 )
 		{
@@ -54,13 +45,13 @@ public class ReadGraph
 			System.exit(0);
 		}
 
-		String inputfile =  args[0]; //file; !enable for the driver class to run multiple tests	
+		String inputfile =  args[0];
 		
 		boolean seen[] = null;
 		
-		int n = -1;					//! n is the number of vertices in the graph
-		int m = -1;					//! m is the number of edges in the graph
-		ColEdge e[] = null;			//! e will contain the edges of the graph
+		int n = -1;			//! n is the number of vertices in the graph
+		int m = -1;			//! m is the number of edges in the graph
+		ColEdge e[] = null;		//! e will contain the edges of the graph
 		
 		try 
 		{ 
@@ -70,10 +61,8 @@ public class ReadGraph
 		        String record = new String();
 				
 				//! The first few lines of the file are allowed to be comments, staring with a // symbol.
-				//! These comments are only allowed at the top of the file.
-				
-				//! -----------------------------------------
-		        while ((record = br.readLine()) != null)
+
+			while ((record = br.readLine()) != null)
 				{
 					if( record.startsWith("//") ) continue;
 					break; // Saw a line that did not start with a comment -- time to start reading the data in!
@@ -99,9 +88,9 @@ public class ReadGraph
 				for( int d=0; d<m; d++)
 				{
 					if(DEBUG) System.out.println(COMMENT + " Reading edge "+(d+1));
-					record = br.readLine();												// Pull a new string from the file
-					String data[] = record.split(" ");									// Split into array of strings at each " "
-					if( data.length != 2 )												// If data[] has more than two points (bad read)
+					record = br.readLine();										// Pull a new string from the file
+					String data[] = record.split(" ");								// Split into array of strings at each " "
+					if( data.length != 2 )										// If data[] has more than two points (bad read)
 					{
 							System.out.println("Error! Malformed edge line: "+record);
 							System.exit(0);
@@ -140,8 +129,8 @@ public class ReadGraph
 		}
 	
 	//-------------------------------------------------------
-		
-		if(args.length == 4)
+		// Menu options for running individual algorithms 
+		if(args.length == 4)					// 3-SAT Algorithm
 		{
 			int times = Integer.parseInt(args[2]);
 			int xg = Integer.parseInt(args[3]);
@@ -158,7 +147,7 @@ public class ReadGraph
 		{
 			int times = Integer.parseInt(args[2]);
 			
-			if(args[1].equalsIgnoreCase("-d"))
+			if(args[1].equalsIgnoreCase("-d"))			// DSatur
 			{
 				for(int i = 0; i < times; i++)
 				{
@@ -167,25 +156,25 @@ public class ReadGraph
 					dsatur.run(eCopy, m, n);
 				}
 			}
-			if(args[1].equalsIgnoreCase("-g"))
+			if(args[1].equalsIgnoreCase("-g"))			// Greedy
 			{
 				System.out.println("Greedy: Still to be implemented");
 			}
-			if(args[1].equalsIgnoreCase("-bt"))
+			if(args[1].equalsIgnoreCase("-bt"))			// BackTracking
 			{
 				System.out.println("Backtracking: Still to be implemented");
 			}
-			if(args[1].equalsIgnoreCase("-bf"))
+			if(args[1].equalsIgnoreCase("-bf"))			// Brute Force (multithreaded)
 			{
+				BruteForceNoPruningThreaded b = new BruteForceNoPruningThreaded();
 				for(int i = 0; i < times; i++)
 				{
-					ColEdge[] eCopy = Arrays.copyOf(e, e.length);
-					DSATUR dsatur = new DSATUR();
-					dsatur.run(eCopy, m, n);
+					ColEdge[] eCopy = copyEdges(e);
+					b.run(eCopy, n);
 				}
 			}
 		}
-		else if(args.length == 1)
+		else if(args.length == 1)					// If only a file is passed: pick the best algorithm
 		{
 			System.out.println("File only: Still to be implemented");
 		}
