@@ -19,7 +19,7 @@ public class DSATUR
 	 * @param n - Int - Number of edges.
 	 * @return 	- Int - The chromatic number
 	 */
-	public int run(ColEdge[] e, int m, int n)
+	public int run(ColEdge[] e, int m, int n, String inputfile)
 		{
 			System.out.println("Running DSATUR");
 			// Start the clock!
@@ -57,7 +57,9 @@ public class DSATUR
 			if(DEBUG) {printGraph(e);}
 			
 			System.out.println("Chomatic Number = " + (chromeNumb + 1)); // Add one due to counting colour 0
-			System.out.println("The time needed to perform this analysis was: " + (System.nanoTime()-start)/1000000.0 + " ms.\n");
+			double time = (System.nanoTime()-start)/1000000.0;
+			System.out.println("The time needed to perform this analysis was: " + time + " ms.\n");
+			Logger.logResults("DSATUR", inputfile, chromeNumb + 1, time);
 			return chromeNumb + 1;
 		}
 		
