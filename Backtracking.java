@@ -1,15 +1,21 @@
+package proj1; 
+
+import java.util.Arrays; 
+
 public class Backtracking {
 
+public static final boolean DEBUG = true; 
+	
 public static void main (String[] args) {
 
-	//This is the variable of the vertex
+    //This is the variable of the vertex
     int v = 1; 
 
     //Here I gave random values to the graph 
-    int [][] graph  = { {0, 1, 1, 1},
-                        {1, 0, 1, 0},
-                        {1, 1, 0, 1}, 
-                        {0, 1, 0, 0}, };
+    int [][] graph  = { {1, 0, 0, 0},
+	                {1, 0, 0, 0},
+	                {1, 0, 0, 0}, 
+	                {1, 0, 0, 0}, };
 
     //This is the colour array
     //In this case 4 is the number of verices of the graph
@@ -25,8 +31,9 @@ public static void main (String[] args) {
 //v is the vertex that we are going to colour 
 //colour[v] is the array that holds the current colour at each vertex
 public static void graphColour(int v, int[] colour, int[][] graph) {
-
-	// cr it the colour that needs to be tested
+	
+    if(DEBUG) {System.out.println(Arrays.deepToString(graph)); }	
+    // cr it the colour that needs to be tested
     for (int cr = 1; cr <= graph.length; cr++) {
 
         //Here I call the isAvailble method in order to make sure that a color can be used
@@ -55,8 +62,7 @@ public static void graphColour(int v, int[] colour, int[][] graph) {
 	
 //This method checks if that colour is available to place
 //int v is the vertex to be coloured 
-//int colour is a possible colour that can be associated to vertex k 
-//
+//int colour is a possible colour that can be associated to vertex v 
 public static boolean isAvailable (int v, int[] colour, int cr, int[][] graph) {
 
     for (int i = 0; i < graph.length; i++) {
@@ -66,10 +72,12 @@ public static boolean isAvailable (int v, int[] colour, int cr, int[][] graph) {
 
             /*I return false if the colour of the two adjacent vertices match 
             because I cannot use that colour*/ 
+	    if(DEBUG) {System.out.println("Colour " + colour[i] + " available: false");}
             return false; 
         }
     }
-        //I return true if it is safe to place that colour 
+        //I return true if it is safe to place that colour
+	if (DEBUG) {System.out.println("Colour " + cr + " available: true");}
         return true; 
     }
 
