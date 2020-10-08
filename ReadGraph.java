@@ -54,8 +54,7 @@ public class ReadGraph {
 
 			String record = new String();
 
-			// ! The first few lines of the file are allowed to be comments, staring with a
-			// // symbol.
+			// ! The first few lines of the file are allowed to be comments, staring with a // symbol.
 
 			while ((record = br.readLine()) != null) {
 				if (record.startsWith("//"))
