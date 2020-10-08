@@ -21,7 +21,7 @@ public class Logger {
     }   
 
     /**
-     * 
+     * Writes the results to the log file
      * @param algorithm Name of the algorithm used
      * @param chromaticNumber The chromatic number computed by the algorithm
      * @param time The time (in ms) it took to run the algorithm
