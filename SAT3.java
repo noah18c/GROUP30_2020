@@ -22,7 +22,7 @@ public class SAT3
 	 * @param e - Number of Edges
 	 * @param k - Number of Colours
 	 */
-	public SAT3(ColEdge[] E, int e, int v,  int k) 
+	public SAT3(ColEdge[] E, int e, int v,  int k, String inputfile) 
 	{
 		// Create a list of colours represented as strings of letters
 		String[] colours = {"a","b","c","d","e","f","g","h","i","j","k","l","m","o","p","q","r","s","t","u","v","w","x","y","z",
@@ -183,7 +183,8 @@ public class SAT3
 		if (output.out)
 			System.out.print(" with values: " + Arrays.toString(A) + " = " + Arrays.toString(output.A_values));
 					
-		System.out.println("\nThe time needed to perform this analysis was: " + (System.nanoTime()-start)/1000000.0 + " ms.\n");
+		double time = (System.nanoTime()-start)/1000000.0;
+		System.out.println("\nThe time needed to perform this analysis was: " + time + " ms.\n");
 	}
 	
 	//-------------------------------------------------------
