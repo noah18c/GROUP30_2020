@@ -44,7 +44,7 @@ public class ReadGraph
 			System.out.println("Error! No filename specified.");
 			System.exit(0);
 		}
-		if( args[1].equalsIgnoreCase("-help"))
+		if( args[0].equalsIgnoreCase("-help"))
 		{
 			System.out.println("Graph Colouring Algorithm - Group 30"
 					+ "\nTo run the algorithm on a single graph, specify the file name as a .txt file only."
