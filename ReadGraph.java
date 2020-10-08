@@ -132,11 +132,63 @@ public class ReadGraph
 				if(DEBUG) System.out.println(COMMENT + " Warning: vertex "+x+" didn't appear in any edge : it will be considered a disconnected vertex on its own.");
 			}
 		}
+	
+	//-------------------------------------------------------
 		
-		DSATUR dsatur = new DSATUR();
-		int chromNum = dsatur.run(e, m, n);
-		Branching SAT1 = new Branching(e, m, n, chromNum);
-		Branching SAT2 = new Branching(e, m, n, chromNum-1);
+		if(args.length == 4)
+		{
+			int times = Integer.parseInt(args[2]);
+			int xg = Integer.parseInt(args[3]);
+			if(args[1].equalsIgnoreCase("-s"))
+			{
+				ColEdge[] eCopy = Arrays.copyOf(e, e.length);
+				for(int i = 0; i < times; i++)
+				{
+					SAT3 sat3 = new SAT3(e, m, n, xg);
+				}
+			}
+		}
+		else if(args.length == 3)
+		{
+			int times = Integer.parseInt(args[2]);
+			ColEdge[] eCopy = Arrays.copyOf(e, e.length);
+			if(args[1].equalsIgnoreCase("-d"))
+			{
+				
+				for(int i = 0; i < times; i++)
+				{
+					DSATUR dsatur = new DSATUR();
+					dsatur.run(eCopy, m, n);
+				}
+			}
+			if(args[1].equalsIgnoreCase("-g"))
+			{
+				System.out.println("Greedy: Still to be implemented");
+			}
+			if(args[1].equalsIgnoreCase("-bt"))
+			{
+				System.out.println("Backtracking: Still to be implemented");
+			}
+			if(args[1].equalsIgnoreCase("-bf"))
+			{
+				for(int i = 0; i < times; i++)
+				{
+					DSATUR dsatur = new DSATUR();
+					dsatur.run(eCopy, m, n);
+				}
+			}
+		}
+		else if(args.length == 1)
+		{
+			System.out.println("File only: Still to be implemented");
+		}
+		else
+		{
+			System.out.println("Please enter a vaild set of arguments. For more information"
+					+ " run ReadGraph -help");
+			System.exit(0);
+		}
+	}
 
 	}	
 }
