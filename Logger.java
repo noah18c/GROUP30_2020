@@ -1,4 +1,4 @@
-package proj1;
+
 
 import java.io.File;
 import java.io.FileWriter;

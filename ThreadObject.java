@@ -1,4 +1,3 @@
-package multiThread;
 
 public class ThreadObject extends Thread
 {

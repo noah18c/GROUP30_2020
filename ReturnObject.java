@@ -1,4 +1,4 @@
-package proj1;
+
 /**
  * Implementation of a class to return a boolean variable (out) and an array of Boolean variables (A_values) in Branching.java's methods
  *

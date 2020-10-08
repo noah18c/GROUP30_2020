@@ -1,5 +1,3 @@
-package proj1;
-
 import java.io.*;
 import java.lang.reflect.Array;
 import java.util.*;
@@ -46,8 +44,16 @@ public class ReadGraph
 			System.out.println("Error! No filename specified.");
 			System.exit(0);
 		}
+		if( args[1].equalsIgnoreCase("-help"))
+		{
+			System.out.println("Graph Colouring Algorithm - Group 30"
+					+ "\nTo run the algorithm on a single graph, specify the file name as a .txt file only."
+					+ "\n\nTo run a specific algorithm use the following arguments:"
+					+ "\n\n Greedy: 	-g\n BackTracking: 	-bt\n DSatur: 	-d\n Brute Force: 	-bf\n 3-SAT: 	-s"
+					+ "\n\nAdd an integer of how many times to run the specified algorithm.");
+			System.exit(0);
+		}
 
-			
 		String inputfile =  args[0]; //file; !enable for the driver class to run multiple tests	
 		
 		boolean seen[] = null;
