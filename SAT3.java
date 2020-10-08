@@ -179,14 +179,13 @@ public class SAT3
 		
 		output = isSatisfiable(L, L_values, A, A_values, null);
 
-		System.out.print("3-SAT returns \"" + output.out + "\"for " + k + " colours");
+		System.out.print("3-SAT returns \"" + output.out + "\" for " + k + " colours");
 		if (output.out)
 			System.out.print(" with values: " + Arrays.toString(A) + " = " + Arrays.toString(output.A_values));
 					
 		double time = (System.nanoTime()-start)/1000000.0;
-                System.out.println("\nThe time needed to perform this analysis was: " + time  + " ms.\n");
-                Logger.logResults("3-SAT", inputfile , k, time);
-
+		System.out.println("\nThe time needed to perform this analysis was: " + time + " ms.\n");
+		Logger.logResults("3-SAT", inputfile , k, time);
 	}
 	
 	//-------------------------------------------------------
