@@ -179,7 +179,7 @@ public class SAT3
 		
 		output = isSatisfiable(L, L_values, A, A_values, null);
 
-		System.out.print("K-SAT returns \"" + output.out + "\"for " + k + " colours");
+		System.out.print("3-SAT returns \"" + output.out + "\"for " + k + " colours");
 		if (output.out)
 			System.out.print(" with values: " + Arrays.toString(A) + " = " + Arrays.toString(output.A_values));
 					
