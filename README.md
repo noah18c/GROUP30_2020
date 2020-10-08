@@ -47,5 +47,4 @@
 	L_values[Lpntr][1] = null;
 	Lpntr++;// Increment to the next pointer location
   
-  
-  
+ 
