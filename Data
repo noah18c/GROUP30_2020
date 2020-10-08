@@ -2,9 +2,9 @@
 		Vertices|Edges		DSatur	(T)			SAT	(T)			Brute Force	(T)
 Graph_01: 	76	303		11	9.826787 ms		11	256123.269172 ms			
 Graph_02: 	61	1390		24	16.925171 ms					
-Graph_03: 	18	46		4	0.150178 ms		4	141.367272 ms		4		122158.200 ms
-Graph_04: 	11	16		3	0.103567 ms		3	35.044241 ms		3		40.760500 ms
-Graph_05: 	93	92		2    	0.461993 ms		3	2670.887269		2**		(Still running)
+Graph_03: 	18	46		4	0.150178 ms		4	141.367272 ms		4		14839.6189 ms		
+Graph_04: 	11	16		3	0.103567 ms		3	35.044241 ms		3		41.5354 ms
+Graph_05: 	93	92		2    	0.461993 ms		3	2670.887269		
 Graph_06: 	69	409		8	1.612195 ms					
 Graph_07: 	43	127		5	0.369899 ms		4	4038.06283 ms			
 Graph_08: 	56	483		9	1.664507 ms					
@@ -12,7 +12,7 @@ Graph_09: 	41	184		10	0.719777 ms		10	31937.034384 ms
 Graph_10: 	209	1249		9	13.739106 ms						
 Graph_11: 	191	3888		31	57.20874 ms				
 Graph_12: 	195	2365		8	15.080223 ms				
-Graph_13: 	61	448		2    	0.787499 ms						2**		(Still running)	
+Graph_13: 	61	448		2    	0.787499 ms							
 Graph_14: 	31	385		16	1.01374 ms		
 Graph_15: 	41	205		7	0.39815 ms		6	15455.07778 ms
 Graph_16: 	867	18711		54	1024.719048 ms		
@@ -30,8 +30,8 @@ In order of complexity:
 
 		Vertices|Edges	Complexity	DSatur		SAT		Brute Force
 				Index (rndd)
-Graph_04: 	11	16	1		0.103567 ms	35.044241 ms	40.760500 ms
-Graph_03: 	18	46	3		0.150178 ms	141.367272 ms	122158.200 ms		
+Graph_04: 	11	16	1		0.103567 ms	35.044241 ms	41.5354 ms
+Graph_03: 	18	46	3		0.150178 ms	141.367272 ms	14839.6189 ms		
 Graph_18: 	52	52	1		0.238595 ms	1523.343029 ms
 Graph_05: 	93	92	1		0.461993 ms	2670.887269 ms	
 Graph_07: 	43	127	3		0.369899 ms	3911.948271 ms
