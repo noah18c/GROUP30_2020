@@ -2,6 +2,7 @@ package proj1;
 /**
  * A Simple brute force algorithm that runs over every single possibility of how to color the graph.
  * It is extremely slow, however the chromatic number is guaranteed to be correct.
+ * This version uses threading, which increases efficiency significantly.
  * 
  * @author I. Heijnens
  * @version 1.0
@@ -80,9 +81,9 @@ class Vertex  {
          * @param vertices Array of Vertex objects
          */
         public void nextPossibility(int maxColor, Vertex[] vertices) {
-            if (color == maxColor) {
-                color = 0;
-                if (this != vertices[vertices.length-1]) vertices[id+1].nextPossibility(maxColor, vertices);
+	    	if (color == maxColor) {
+            	color = 0;
+            	if (this != vertices[vertices.length-1]) vertices[id+1].nextPossibility(maxColor, vertices); // Pass on to the next vertex
             } else color++;
         }
         
@@ -101,7 +102,7 @@ public class BruteForceNoPruningThreaded {
     public int run(ColEdge[] e, int n) {
         long startTime = System.nanoTime();
         int maxColors = 0;
-        if (e.length != 0){ // Just in case
+        if (e.length != 0) { // Just in case
             Vertex[] vertices = toVertexArray(e, n);
             int i = 0;
             boolean ok = false;
@@ -153,7 +154,7 @@ public class BruteForceNoPruningThreaded {
      */
     private static boolean threadedBruteForce(int maxColors, Vertex[] vertices) {    
         int threadlevels;
-        if (maxColors >= 1) threadlevels = (int) (Math.log10(Runtime.getRuntime().availableProcessors() * 2) / Math.log10(maxColors+1));
+        if (maxColors >= 1) threadlevels = (int) (Math.log10(Runtime.getRuntime().availableProcessors() * 2) / Math.log10(maxColors+1)); // Max 2 threads per processor
         else threadlevels = 1;
         if (threadlevels + 2 > vertices.length) threadlevels = Math.max(1,vertices.length - 2);
         BruteForceThread[] threads = new BruteForceThread[(int) (Math.pow(maxColors + 1, threadlevels))];
