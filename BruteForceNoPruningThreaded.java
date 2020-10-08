@@ -97,9 +97,10 @@ public class BruteForceNoPruningThreaded {
 	 * 
 	 * @param e Array of ColEdge objects
 	 * @param n Number of vertices
-     * @return The chromatic number
+     	 * @return The chromatic number
 	 */
-    public int run(ColEdge[] e, int n) {
+	
+    public int run(ColEdge[] e, int n, String inputfile) {
         long startTime = System.nanoTime();
         int maxColors = 0;
         if (e.length != 0) { // Just in case
@@ -126,7 +127,7 @@ public class BruteForceNoPruningThreaded {
         double time = (System.nanoTime() - startTime)/1000000.0;
         System.out.println("Chromatic number: " + (maxColors + 1));
         System.out.println("Time needed: " + (time + " ms"));
-        Logger.logResults("BruteForceNoPruning", "graph04_2020.txt" , maxColors + 1, time);
+        Logger.logResults("BruteForceNoPruning", inputfile , maxColors + 1, time);
         return 0;
     }
 
