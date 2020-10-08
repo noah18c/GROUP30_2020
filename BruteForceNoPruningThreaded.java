@@ -1,4 +1,4 @@
-package proj1;
+
 /**
  * A Simple brute force algorithm that runs over every single possibility of how to color the graph.
  * It is extremely slow, however the chromatic number is guaranteed to be correct.
