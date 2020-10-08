@@ -14,6 +14,9 @@ public class SAT3
 	{
 	
 	final boolean DEBUG = false;
+	ColEdge[] E;
+	int e,v,k;
+	String inputfile;
 	
 	/**
 	 * 
@@ -24,6 +27,14 @@ public class SAT3
 	 */
 	public SAT3(ColEdge[] E, int e, int v,  int k, String inputfile) 
 	{
+		this.E = E;
+		this.e = e;
+		this.v = v;
+		this.k = k;
+		this.inputfile = inputfile;
+	}
+	
+	public boolean run() {
 		// Create a list of colours represented as strings of letters
 		String[] colours = {"a","b","c","d","e","f","g","h","i","j","k","l","m","o","p","q","r","s","t","u","v","w","x","y","z",
 							"ab","ab","ac","ad","ae","af","ag","ah","ai","aj","ak","al","am","ao","ap","aq","ar","as","at","au","av","aw","ax","ay","az"}; 
@@ -185,9 +196,10 @@ public class SAT3
 					
 		double time = (System.nanoTime()-start)/1000000.0;
 		System.out.println("\nThe time needed to perform this analysis was: " + time + " ms.\n");
-		Logger.logResults("3-SAT", inputfile , k, time);
+		return output.out;
 	}
-	
+
+
 	//-------------------------------------------------------
 	
 	/** Method to check the index of a targeted value in a one-dimensional array (-1 if it is not found)
