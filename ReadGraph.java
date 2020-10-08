@@ -170,7 +170,7 @@ public class ReadGraph
 				for(int i = 0; i < times; i++)
 				{
 					ColEdge[] eCopy = copyEdges(e);
-					b.run(eCopy, n);
+					b.run(eCopy, n, inputfile);
 				}
 			}
 		}
