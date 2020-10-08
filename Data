@@ -21,10 +21,6 @@ Graph_18: 	52	52		4    	0.238595 ms		4	1523.343029 ms
 Graph_19: 	32	466		31	1.786148 ms		
 Graph_20: 	82	811		10	3.06434 ms		
 
-*Runs provided differing results
-**With pruning; may be inaccurate.
-
-
 
 In order of complexity:		
 
