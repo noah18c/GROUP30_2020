@@ -151,12 +151,12 @@ public class ReadGraph
 		else if(args.length == 3)
 		{
 			int times = Integer.parseInt(args[2]);
-			ColEdge[] eCopy = Arrays.copyOf(e, e.length);
+			
 			if(args[1].equalsIgnoreCase("-d"))
 			{
-				
 				for(int i = 0; i < times; i++)
 				{
+					ColEdge[] eCopy = copyEdges(e);
 					DSATUR dsatur = new DSATUR();
 					dsatur.run(eCopy, m, n);
 				}
@@ -173,6 +173,7 @@ public class ReadGraph
 			{
 				for(int i = 0; i < times; i++)
 				{
+					ColEdge[] eCopy = Arrays.copyOf(e, e.length);
 					DSATUR dsatur = new DSATUR();
 					dsatur.run(eCopy, m, n);
 				}
@@ -189,6 +190,23 @@ public class ReadGraph
 			System.exit(0);
 		}
 	}
-
+	
+	/**
+	 * Make a deep copy of a ColEdge array
+	 * @param e - An array of edges
+	 * @return  - A deep copy of the array
+	 */
+	public static ColEdge[] copyEdges(ColEdge[] e)
+	{
+		ColEdge[] eCopy = new ColEdge[e.length];
+		for(int i = 0; i < e.length; i++)
+		{
+			eCopy[i] = new ColEdge();
+			eCopy[i].u = e[i].u;
+			eCopy[i].v = e[i].v;
+			eCopy[i].colU = e[i].colU;
+			eCopy[i].colV = e[i].colV;
+		}
+		return eCopy;
 	}	
 }
